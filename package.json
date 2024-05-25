@@ -1,0 +1,22 @@
+{
+    "name": "@lesnoypudge/types-utils-react",
+    "version": "1.0.0",
+    "description": "lesnoypudge's types-utils-react",
+    "main": "./index.d.ts",
+    "scripts": {
+        "deploy": "git add . && git commit -m 'update' && git push && git status",
+        "publish": "npm publish --access public"
+    },
+    "author": "LesnoyPudge",
+    "license": "ISC",
+    "keywords": [
+        "lesnoypudge",
+        "types-utils-react"
+    ],
+    "devDependencies": {
+        "typescript": "^5.4.5"
+    },
+    "dependencies": {
+        "@types/react": "^18.3.3"
+    }
+}
