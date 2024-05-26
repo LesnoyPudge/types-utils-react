@@ -1,4 +1,4 @@
-import { PropsWithChildrenAndClassName, PropsWithRendedFunction } from "index";
+import { RT } from "index";
 import { FC } from "react";
 
 // import { ReactT } from "index";
@@ -6,13 +6,13 @@ import { FC } from "react";
 
 
 
-const Comp2: FC<PropsWithRendedFunction<[name: string]>> = ({children}) => {
+const Comp2: FC<RT.PropsWithRendedFunction<[name: string]>> = ({children}) => {
     const arg = 'wow';
     return children instanceof Function ? children(arg) : children;
 }
 
 
-const Comp: FC<PropsWithChildrenAndClassName> = ({
+const Comp: FC<RT.PropsWithChildrenAndClassName> = ({
     className = '',
     children,
 }) => {
