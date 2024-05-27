@@ -1,4 +1,4 @@
-import { RT } from "index";
+import { RT } from "./namespace";
 import { FC } from "react";
 
 // import { ReactT } from "index";
@@ -6,11 +6,19 @@ import { FC } from "react";
 
 
 
-const Comp2: FC<RT.PropsWithRendedFunction<[name: string]>> = ({children}) => {
+const Comp2: FC<RT.PropsWithRenderFunction<[name: string]>> = ({
+    children
+}) => {
+    const arg = 'wow';
+    return children && children(arg);
+}
+
+const Comp3: FC<RT.PropsWithRenderFunctionOrNode<[name: string]>> = ({
+    children
+}) => {
     const arg = 'wow';
     return children instanceof Function ? children(arg) : children;
 }
-
 
 const Comp: FC<RT.PropsWithChildrenAndClassName> = ({
     className = '',
@@ -18,9 +26,15 @@ const Comp: FC<RT.PropsWithChildrenAndClassName> = ({
 }) => {
     return (
         <>
-            <Comp2>
+            <Comp3>
                 <></>
-            </Comp2>
+            </Comp3>
+
+            <Comp3>
+                {(name) => {
+                    return <></>
+                }}
+            </Comp3>
             
             <Comp2>
                 {(name) => {
