@@ -1,1 +1,1 @@
-export * as RT from './src/index.d.ts'
+export * from './src/index.d.ts'
